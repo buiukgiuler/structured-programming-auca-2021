@@ -23,6 +23,5 @@ public class Problem04 {
         System.out.println(a + "*" + b + "=" + mul);
         System.out.println(a + "/" + b + "=" + div);
         System.out.println(a + "%" + b + "=" + rem);
-
     }
 }
