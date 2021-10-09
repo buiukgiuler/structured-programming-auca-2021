@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Problem04 {
+public class Problem07 {
 
     public static void main(String args[]) {
         int a = 1;
