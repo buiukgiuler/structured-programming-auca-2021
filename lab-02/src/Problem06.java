@@ -10,7 +10,7 @@ public class Problem06 {
 
         double farenheit = (celsius * 9.0/5) + 32;
 
-        System.out.printf( celsius + " Celsius is " + "%.2f farenheit" , farenheit);
+        System.out.printf(  celsius + " celsius is " + "%.1f farenheit" , farenheit);
 
     }
 }
