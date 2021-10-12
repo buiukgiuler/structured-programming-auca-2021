@@ -13,11 +13,11 @@ public class Problem07 {
         double area = (radius * radius * Math.PI);
         double volume = (area * length);
 
-        System.out.printf("the area is " + "%.2f", area);
+        System.out.printf("the area is " + "%.4f", area);
 
         System.out.println();
 
-        System.out.printf("the volume is " + "%.2f", volume);
+        System.out.printf("the volume is " + "%.1f", volume);
 
     }
 }
