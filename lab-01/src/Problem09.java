@@ -12,8 +12,5 @@ public class Problem09 {
 
         System.out.println("Sum = " + sum);
         System.out.println("Sum = " + sum1);
-
-
     }
-
 }
