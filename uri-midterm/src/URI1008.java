@@ -13,7 +13,10 @@ public class URI1008 {
         c = sc.nextFloat();
 
         System.out.printf("ЧИСЛА = %d\n", a);
-
         System.out.printf("ЗАРПЛАТА = U$ %.2f\n", b * c);
+
     }
+
+
+
 }
