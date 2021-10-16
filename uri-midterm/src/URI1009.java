@@ -15,7 +15,7 @@ public class URI1009 {
 
 
         TOTAL = salary + value * 0.15;
-        System.out.printf("TOTAL = R$ %.2f\n",TOTAL);
+        System.out.printf("Total = R$ %.2f\n",TOTAL);
 
     }
 }
