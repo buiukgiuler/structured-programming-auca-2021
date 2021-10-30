@@ -24,7 +24,7 @@ public class Problem06 {
             System.out.println("The equation has one root " + r);
         }
         else {
-            System.out.println("The1 equation has no real roots");
+            System.out.println("The equation has no real roots");
         }
     }
 
