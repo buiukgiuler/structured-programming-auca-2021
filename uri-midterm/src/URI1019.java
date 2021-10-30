@@ -10,6 +10,6 @@ public class URI1019 {
         int seconds = minutes%60;
         minutes= minutes/60;
 
-        System.out.println(hourjs +":"+ minutes + ":" + seconds);
+        System.out.println(hours +":"+ minutes + ":" + seconds);
     }
 }
