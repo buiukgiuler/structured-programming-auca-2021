@@ -13,7 +13,7 @@ public class Problem05 {
             System.out.println("Grade:B");
 
             if (gradesOfStudents < 80) {
-                System.out.println("Grade:C");
+                System.out.println("Grade:B");
             }
             }
         }
