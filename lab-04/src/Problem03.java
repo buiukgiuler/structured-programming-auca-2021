@@ -3,7 +3,7 @@ public class Problem03 {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
 
-        System.out.print("Number of points?");
+        System.out.print("Number of mounth?");
         int mounth = inp.nextInt();
 
         switch (mounth) {
