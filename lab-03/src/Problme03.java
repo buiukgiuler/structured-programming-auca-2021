@@ -10,7 +10,7 @@ public class Problme03 {
         System.out.print("2nd number?");
         int b = inp.nextInt();
 
-        System.out.print("3rd number?");
+        System.out.print("3rd number??");
         int c = inp.nextInt();
 
         int max = a;
