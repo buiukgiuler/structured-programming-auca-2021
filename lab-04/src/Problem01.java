@@ -21,6 +21,5 @@ public class Problem01 {
         } else {
             System.out.println("What?!!!");
         }
-
     }
 }
