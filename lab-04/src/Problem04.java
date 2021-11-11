@@ -21,6 +21,9 @@ public class Problem04 {
             case 0:
                 System.out.println("You are a total newbie");
                 break;
+            default:
+                System.out.println("Incorrect complexity level: " + complexitylevel);
+                break;
         }
     }
 }
