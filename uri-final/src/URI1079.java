@@ -15,7 +15,7 @@ public class URI1079 {
             number2 = inp.nextDouble();
             number3 = inp.nextDouble();
             average = ( number1*2 + number2*3 + number3*5 ) / 10;
-            System.out.printf("%.1f", average);
+            System.out.printf("%.1f\n", average);
         }
     }
 
