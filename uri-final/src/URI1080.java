@@ -18,7 +18,7 @@ public class URI1080 {
                 pos = i;
             }
         }
-        System.out.print(hig + "\n" + pos + "\n");
+        System.out.print(hig + "\n" + pos + "\n" );
     }
 
 }
