@@ -14,7 +14,7 @@ public class Problem01 extends PApplet {
 
 
     public void setup() {
-    messageSize = MIN_SIZE;
+        messageSize = MIN_SIZE;
     }
 
     public void draw() {
@@ -25,7 +25,10 @@ public class Problem01 extends PApplet {
 
         if (messageSize <= MAX_SIZE) {
             messageSize += 1;
-            text("Hello, Processing!!!", width /2f, height / 2f);
+            text("Hello, Processing!!!", width / 2f, height / 2f);
+        } else if (messageSize > MAX_SIZE) {
+            messageSize -= 144;
+            text("Hello, Processing!!!", width / 2f, height / 2f);
         }
     }
 
