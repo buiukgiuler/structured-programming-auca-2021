@@ -10,7 +10,7 @@ public class Problem04 extends PApplet {
     }
 
     public void setup() {
-       circleX = width/2f;
+       circleX = width/3f;
        circleY = height/2f;
        circleR=  height/20f;
        frameRate(10);
