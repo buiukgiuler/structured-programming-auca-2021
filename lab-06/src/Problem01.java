@@ -12,7 +12,7 @@ public class Problem01 {
         System.out.print("Coordinate of 2nd point:");
         int X2 = inp.nextInt();
 
-        int d1 = AuMath.abs(userX - X1)
+        int d1 = AuMath.abs(userX - X1);
         int d2 = AuMath.abs(userX - X2);
 
         if (d1 < d2) {
