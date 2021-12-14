@@ -21,6 +21,7 @@ public class Problem06 extends PApplet {
 
     public void draw() {
         background(0, 0, 0);
+        //color Sun
 
         pushMatrix();
 
@@ -43,7 +44,7 @@ public class Problem06 extends PApplet {
         translate(200, 0);
         fill(0, 0, 255);
         stroke(0, 0, 255);
-        circle(0, 0, 70);
+        circle(0, 0, 80);
 
         //Moon
         rotate(beta);
@@ -54,7 +55,7 @@ public class Problem06 extends PApplet {
 
 
         alpha += 0.02f;
-        beta += 0.03f;
+        beta += 0.000001f;
 
         popMatrix();
 
@@ -97,7 +98,7 @@ public class Problem06 extends PApplet {
 
 
         //Orbit
-        if (rectSunX <= mouseX && mouseX <= rectSunX * 1.6f + RECT_WIDTH && rectSunY <= mouseY && mouseY <= rectSunY + RECT_HEIGHT) {
+        if (rectSunX <= mouseX/1.6f && mouseX/ 1.6f <= rectSunX * 1.6f + RECT_WIDTH && rectSunY <= mouseY && mouseY <= rectSunY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Sun", rectSunX * 1.6f, rectSunY, RECT_WIDTH, RECT_HEIGHT);
             translate(width / 2f, height / 2f);
@@ -106,7 +107,7 @@ public class Problem06 extends PApplet {
             circle(0, 0, 210);
 
         }
-        if (rectVenusX <= mouseX && mouseX <= rectVenusX * 1.6f + RECT_WIDTH && rectVenusY <= mouseY && mouseY <= rectVenusY + RECT_HEIGHT) {
+        if (rectVenusX <= mouseX/1.6f && mouseX/1.6f <= rectVenusX * 1.6f + RECT_WIDTH && rectVenusY <= mouseY && mouseY <= rectVenusY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Venus", rectVenusX * 1.6f, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
@@ -120,7 +121,7 @@ public class Problem06 extends PApplet {
             circle(0, -5, 95);
         }
 
-        if (rectEarthX <= mouseX && mouseX <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
+        if (rectEarthX <= mouseX/1.6f && mouseX/1.6f <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Earth", rectEarthX * 1.6f, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
@@ -131,17 +132,23 @@ public class Problem06 extends PApplet {
             translate(400, 0);
             noFill();
             stroke(255, 0, 0);
-            circle(0, -5, 95);
+            circle(0, -7, 95);
         }
-        if (rectMoonX <= mouseX && mouseX <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
+        if (rectMoonX <= mouseX /1.6f && mouseX/1.6f <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Moon", rectMoonX * 1.6f, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
             translate(width / 2f, height / 2f);
-            rotate(beta);
+            rotate(alpha);
             translate(400, 0);
             noFill();
             stroke(255, 0, 0);
-            circle(0, -5, 95);
+            circle(0, -7, 185);
+            rotate(beta);
+            translate(93, 0);
+            noFill();
+            stroke(255, 0, 0);
+            circle(-3, -11, 35);
+
         }
     }
 
