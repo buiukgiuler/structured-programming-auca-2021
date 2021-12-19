@@ -18,7 +18,7 @@ public class Problem03 {
         printArray(a);
     }
 
-    private static void reverseArray(int[] v) {
+    private static void reverseArray(int[] v)  {
         for (int left = 0, right = v.length - 1; left < right; ++left, --right) {
 
             int t = v[left];
