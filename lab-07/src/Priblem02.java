@@ -30,7 +30,7 @@ public class Priblem02 {
 
         int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int res = days[month - 1];
-        if (isLeapYear(year) && month == 2) {
+        if (isLeapYear(year) && month == 2)  {
             ++res;
 
         }
