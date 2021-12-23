@@ -1,65 +1,30 @@
 import processing.core.*;
 
 public class Problem06 extends PApplet {
+
+    final int NUM_OF_CIRCLES = 100;
+
     static final float RECT_WIDTH = 280;
     static final float RECT_HEIGHT = 60;
 
-    float alpha = 1;
-    float beta;
+    float alpha = 0;
+    float moonAngle = 0;
 
 
     public void settings() {
         fullScreen();
+
     }
 
     public void setup() {
         textSize(40);
         textAlign(CENTER);
 
-
     }
 
     public void draw() {
         background(0, 0, 0);
-        //color Sun
 
-        pushMatrix();
-
-        //Sun
-        translate(width / 2f, height / 2f);
-        fill(255, 204, 0);
-        stroke(255, 204, 0);
-        circle(0, 0, 200);
-
-
-        // Venus
-        rotate(alpha);
-        translate(200, 0);
-        fill(0, 255, 255);
-        stroke(0, 0, 255);
-        circle(0, 0, 80);
-
-
-        // Earth
-        translate(200, 0);
-        fill(0, 0, 255);
-        stroke(0, 0, 255);
-        circle(0, 0, 80);
-
-        //Moon
-        rotate(beta);
-        translate(90, 0);
-        fill(255);
-        stroke(0);
-        circle(0, 0, 20);
-
-
-        alpha += 0.02f;
-        beta += 0.000001f;
-
-        popMatrix();
-
-        //Text about planet and orbit
         float rectSunX = width / 2f - RECT_WIDTH / 15f;
         float rectSunY = height / 9.5f - RECT_HEIGHT / 2f;
 
@@ -98,56 +63,94 @@ public class Problem06 extends PApplet {
 
 
         //Orbit
-        if (rectSunX <= mouseX/1.6f && mouseX/ 1.6f <= rectSunX * 1.6f + RECT_WIDTH && rectSunY <= mouseY && mouseY <= rectSunY + RECT_HEIGHT) {
+        if (rectSunX <= mouseX / 1.6f && mouseX / 1.6f <= rectSunX * 1.6f + RECT_WIDTH && rectSunY <= mouseY && mouseY <= rectSunY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Sun", rectSunX * 1.6f, rectSunY, RECT_WIDTH, RECT_HEIGHT);
-            translate(width / 2f, height / 2f);
             noFill();
             stroke(255, 0, 0);
-            circle(0, 0, 210);
+            circle(width / 2f, height / 2f, height / 2.5f);
 
         }
-        if (rectVenusX <= mouseX/1.6f && mouseX/1.6f <= rectVenusX * 1.6f + RECT_WIDTH && rectVenusY <= mouseY && mouseY <= rectVenusY + RECT_HEIGHT) {
+        if (rectVenusX <= mouseX / 1.6f && mouseX / 1.6f <= rectVenusX * 1.6f + RECT_WIDTH && rectVenusY <= mouseY && mouseY <= rectVenusY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Venus", rectVenusX * 1.6f, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
             stroke(255, 0, 0);
-            translate(width / 2f, height / 2f);
-            circle(0, 0, 405);
-            rotate(alpha);
-            translate(200, 0);
-            noFill();
-            stroke(255, 0, 0);
-            circle(0, -5, 95);
+            circle(width / 2f, height / 2f, height /1.7f);
         }
 
-        if (rectEarthX <= mouseX/1.6f && mouseX/1.6f <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
+        if (rectEarthX <= mouseX / 1.6f && mouseX / 1.6f <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Earth", rectEarthX * 1.6f, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
             stroke(255, 0, 0);
-            translate(width / 2f, height / 2f);
-            circle(0, 0, 805);
-            rotate(alpha);
-            translate(400, 0);
-            noFill();
-            stroke(255, 0, 0);
-            circle(0, -7, 95);
+            circle(width / 2f, height / 2f, height/1.07f );
         }
-        if (rectMoonX <= mouseX /1.6f && mouseX/1.6f <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
+        if (rectMoonX <= mouseX / 1.6f && mouseX / 1.6f <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Moon", rectMoonX * 1.6f, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
-            translate(width / 2f, height / 2f);
-            rotate(alpha);
-            translate(400, 0);
-            noFill();
-            stroke(255, 0, 0);
-            circle(0, -7, 185);
-            rotate(beta);
-            translate(93, 0);
-            noFill();
-            stroke(255, 0, 0);
-            circle(-3, -11, 35);
+
+        }
+// draw sun
+        noStroke();
+        float dS = height / 2.5f;
+        float colorCompS = 5;
+        float drS = dS / NUM_OF_CIRCLES;
+        float dColorCompS = 255f / NUM_OF_CIRCLES;
+
+        for (int i = 0; i < NUM_OF_CIRCLES; ++i) {
+            fill(colorCompS, colorCompS, 0);
+            circle(width / 2f, height / 2f, dS);
+            dS -= drS;
+            colorCompS += dColorCompS;
+        }
+        translate(width / 2f, height / 2f);
+        rotate(alpha);
+
+        float dV = height / 10f;
+        float colorCompV = 5;
+        float drV = dV / NUM_OF_CIRCLES;
+        float dColorCompV = 255f / NUM_OF_CIRCLES;
+
+
+        for (int i = 0; i < NUM_OF_CIRCLES; ++i) {
+            fill(0, colorCompV, colorCompV);
+            circle(width / 7f, height / 7f, dV);
+            dV -= drV;
+            colorCompV += dColorCompV;
+        }
+//draw Earth
+        translate(width / 15f, height / 10f);
+        float dE = height / 11f;
+        float colorCompE = 5;
+        float drE = dE / NUM_OF_CIRCLES;
+        float dColorCompE = 255f / NUM_OF_CIRCLES;
+
+
+        for (int i = 0; i < NUM_OF_CIRCLES; ++i) {
+            fill(0, 0, colorCompE);
+            circle(width / 9f, height / 4f, dE);
+            dE -= drE;
+            colorCompE += dColorCompE;
+        }
+
+//draw Monn
+        noStroke();
+        rotate(radians(moonAngle));
+        float dM = height / 40f;
+        float colorCompM = 5;
+        float drM = dM / NUM_OF_CIRCLES;
+        float dColorCompM = 255f / NUM_OF_CIRCLES;
+
+
+        for (int i = 0; i < NUM_OF_CIRCLES; ++i) {
+            fill(colorCompM, colorCompM, colorCompM);
+            circle(width / 6.5f, height / 6.5f, dM);
+            dM -= drM;
+            colorCompM += dColorCompM;
+
+            alpha += 0.0003f;
+
 
         }
     }
