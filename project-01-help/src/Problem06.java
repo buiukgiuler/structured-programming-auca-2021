@@ -76,6 +76,10 @@ public class Problem06 extends PApplet {
             noFill();
             stroke(255, 0, 0);
             circle(width / 2f, height / 2f, height / 1.7f);
+            noFill();
+            stroke(255, 0, 0);
+            circle(width / 2.9f, height / 2.4f, height / 10f);
+
         }
 
         if (rectEarthX <= mouseX / 1.6f && mouseX / 1.6f <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
@@ -84,6 +88,9 @@ public class Problem06 extends PApplet {
             noFill();
             stroke(255, 0, 0);
             circle(width / 2f, height / 2f, height / 1.07f);
+            noFill();
+            stroke(255, 0, 0);
+            circle(width / 4f, height / 3f, height /12f);
         }
         if (rectMoonX <= mouseX / 1.6f && mouseX / 1.6f <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
             fill(255, 0, 0);
@@ -93,6 +100,7 @@ public class Problem06 extends PApplet {
             circle(width / 2f, height / 2f, height / 1.07f);
         }
 // draw sun
+
         noStroke();
         float dS = height / 2.5f;
         float colorCompS = 5;
