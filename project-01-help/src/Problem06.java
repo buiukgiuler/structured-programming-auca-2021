@@ -8,7 +8,6 @@ public class Problem06 extends PApplet {
     static final float RECT_HEIGHT = 60;
 
     float alpha = 0;
-    float moonAngle = 0;
 
 
     public void settings() {
@@ -76,7 +75,7 @@ public class Problem06 extends PApplet {
             text("Venus", rectVenusX * 1.6f, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
             stroke(255, 0, 0);
-            circle(width / 2f, height / 2f, height /1.7f);
+            circle(width / 2f, height / 2f, height / 1.7f);
         }
 
         if (rectEarthX <= mouseX / 1.6f && mouseX / 1.6f <= rectEarthX * 1.6f + RECT_WIDTH && rectEarthY <= mouseY && mouseY <= rectEarthY + RECT_HEIGHT) {
@@ -84,12 +83,14 @@ public class Problem06 extends PApplet {
             text("Earth", rectEarthX * 1.6f, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
             noFill();
             stroke(255, 0, 0);
-            circle(width / 2f, height / 2f, height/1.07f );
+            circle(width / 2f, height / 2f, height / 1.07f);
         }
         if (rectMoonX <= mouseX / 1.6f && mouseX / 1.6f <= rectMoonX * 1.6f + RECT_WIDTH && rectMoonY <= mouseY && mouseY <= rectMoonY + RECT_HEIGHT) {
             fill(255, 0, 0);
             text("Moon", rectMoonX * 1.6f, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
-
+            noFill();
+            stroke(255, 0, 0);
+            circle(width / 2f, height / 2f, height / 1.07f);
         }
 // draw sun
         noStroke();
@@ -136,18 +137,21 @@ public class Problem06 extends PApplet {
 
 //draw Monn
         noStroke();
-        rotate(radians(moonAngle));
+        pushMatrix();
+        rotate(-alpha * 4);
+        translate(width / 15f, height / 10f);
         float dM = height / 40f;
         float colorCompM = 5;
         float drM = dM / NUM_OF_CIRCLES;
         float dColorCompM = 255f / NUM_OF_CIRCLES;
-
+        popMatrix();
 
         for (int i = 0; i < NUM_OF_CIRCLES; ++i) {
             fill(colorCompM, colorCompM, colorCompM);
             circle(width / 6.5f, height / 6.5f, dM);
             dM -= drM;
             colorCompM += dColorCompM;
+
 
             alpha += 0.0003f;
 
