@@ -20,7 +20,7 @@ public class Problem02 extends PApplet {
     }
 
     public void setup() {
-        x = width / 2f;
+        x = width /2f;
         y = height / 2f;
         x1 = x - 50;
         y1 = y - 50;
