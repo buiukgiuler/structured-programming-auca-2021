@@ -39,7 +39,6 @@ public class Problem08 extends PApplet {
         text(MESSAGE1, width / 2f, height / 2f);
         textAlign(CENTER, CENTER);
         fill(0, 0, 255);
-        messageSize += CHANGE;
 
         if (messageSize >= MAX_SIZE || messageSize <= MIN_SIZE) {
             CHANGE1 = -CHANGE1;
